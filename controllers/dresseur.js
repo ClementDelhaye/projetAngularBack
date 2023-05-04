@@ -63,7 +63,7 @@ const checkValidity = (req, res, next) => {
 }
 
 // Create
-exports.create = [bodyIdValidationRule(), studentValidationRules(), checkValidity, (req, res, next) => {
+exports.create = [bodyIdValidationRule(), dresseurValidationRules(), checkValidity, (req, res, next) => {
     
     var dresseur = new Dresseur({
         _id: req.body.id,
@@ -99,7 +99,7 @@ exports.getById = [paramIdValidationRule(), checkValidity, (req, res, next) => {
 }];
 
 // Update
-exports.update = [paramIdValidationRule(), studentValidationRules(), checkValidity,(req, res, next) => {
+exports.update = [paramIdValidationRule(), dresseurValidationRules(), checkValidity,(req, res, next) => {
     
     var dresseur = new Dresseur({
         _id: req.params.id,

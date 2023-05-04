@@ -87,7 +87,7 @@ const checkValidity = (req, res, next) => {
 }
 
 // Create
-exports.create = [bodyIdValidationRule(), studentValidationRules(), checkValidity, (req, res, next) => {
+exports.create = [bodyIdValidationRule(), pokemonValidationRules(), checkValidity, (req, res, next) => {
     
     var pokemon = new Pokemon({
         _id: req.body.id,
@@ -126,7 +126,7 @@ exports.getById = [paramIdValidationRule(), checkValidity, (req, res, next) => {
 }];
 
 // Update
-exports.update = [paramIdValidationRule(), studentValidationRules(), checkValidity,(req, res, next) => {
+exports.update = [paramIdValidationRule(), pokemonValidationRules(), checkValidity,(req, res, next) => {
     
     var pokemon = new Pokemon({
         _id: req.body.id,
